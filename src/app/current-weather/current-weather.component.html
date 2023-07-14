@@ -1,0 +1,64 @@
+<div *ngIf="weather">
+  <h2>
+    Current Weather in <span class="cityName">{{ weather.name }}</span>
+  </h2>
+  <mat-divider></mat-divider>
+  <p>
+    <mat-icon
+      id="place"
+      aria-hidden="false"
+      aria-label="place icon"
+      fontIcon="place"
+    ></mat-icon>
+    &nbsp; lat: {{ weather.coord.lat }} &nbsp; lon: {{ weather.coord.lon }}
+  </p>
+  <br />
+  <p>
+    <mat-icon
+      id="termostat"
+      aria-hidden="false"
+      aria-label="Termostat icon"
+      fontIcon="device_thermostat"
+    ></mat-icon>
+    &nbsp; Temperature: {{ weather.main.temp }} °C
+  </p>
+  <small>
+    Temperature Min: {{ weather.main.temp_min }} °C - Temperature Max:
+    {{ weather.main.temp_max }} °C</small
+  >
+  <br />
+  <br />
+  <p>
+    <mat-icon
+      id="humidity"
+      aria-hidden="false"
+      aria-label="opacity icon"
+      fontIcon="opacity"
+    ></mat-icon>
+    &nbsp; Humidity: {{ weather.main.humidity }}%
+  </p>
+  <br />
+  <p>
+    <mat-icon
+      id="wind"
+      aria-hidden="false"
+      aria-label="description icon"
+      fontIcon="air"
+    ></mat-icon>
+    &nbsp; Wind Speed: {{ weather.wind.speed }} Kmh
+  </p>
+  <br />
+  <p>
+    <mat-icon
+      id="description"
+      aria-hidden="false"
+      aria-label="description icon"
+      fontIcon="description"
+    ></mat-icon>
+    &nbsp; Description: {{ weather.weather[0].description }}
+  </p>
+</div>
+
+<div *ngIf="error">
+  <h2 class="error">{{ error.message }}</h2>
+</div>

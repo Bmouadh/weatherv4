@@ -1,0 +1,24 @@
+.error {
+  color: red;
+}
+
+#termostat {
+  color: red;
+}
+
+#humidity {
+  color: cyan;
+}
+
+#description {
+  color: gray;
+}
+
+#wind {
+  color: rgb(161, 253, 245);
+}
+
+.cityName {
+  font-family: 'Courier New', Courier, monospace;
+  font-style: italic;
+}

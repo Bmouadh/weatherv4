@@ -1,0 +1,8 @@
+#chartdiv {
+  width: 95%;
+  height: 650px;
+}
+
+.error {
+  color: red;
+}

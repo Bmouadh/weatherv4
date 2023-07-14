@@ -1,0 +1,7 @@
+<span *ngIf="!error">
+  <div id="chartdiv"></div>
+</span>
+
+<div *ngIf="error">
+  <h2 class="error">Error fetching chart forecast: {{ error.message }}</h2>
+</div>

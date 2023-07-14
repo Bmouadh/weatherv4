@@ -1,0 +1,46 @@
+<span *ngIf="!error">
+  <table mat-table [dataSource]="forecast.list" class="mat-elevation-z8">
+    <ng-container matColumnDef="Date">
+      <th mat-header-cell *matHeaderCellDef>Date</th>
+      <td mat-cell *matCellDef="let element">{{ element.dt_txt }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="Temperature">
+      <th mat-header-cell *matHeaderCellDef>Temperature (°C)</th>
+      <td mat-cell *matCellDef="let element">{{ element.main.temp }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="Humidity">
+      <th mat-header-cell *matHeaderCellDef>Humidity (%)</th>
+      <td mat-cell *matCellDef="let element">{{ element.main.humidity }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="Pressure">
+      <th mat-header-cell *matHeaderCellDef>Pressure (mBar)</th>
+      <td mat-cell *matCellDef="let element">{{ element.main.pressure }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="Wind speed">
+      <th mat-header-cell *matHeaderCellDef>Wind speed (Kmh)</th>
+      <td mat-cell *matCellDef="let element">{{ element.wind.speed }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="See level">
+      <th mat-header-cell *matHeaderCellDef>See Level (M)</th>
+      <td mat-cell *matCellDef="let element">{{ element.main.sea_level }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="Description">
+      <th mat-header-cell *matHeaderCellDef>Description</th>
+      <td mat-cell *matCellDef="let element">
+        {{ element.weather[0].description }}
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
+</span>
+<div *ngIf="error">
+  <h2 class="error">{{ error.message }}</h2>
+</div>
